@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SNBT Solutions | Software Development & IT Services</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="SNBT Solutions is a software and IT services company. We build custom software, web and mobile apps, cloud platforms and data solutions, and we keep them running.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.snbtsolutions.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SNBT Solutions">
+<meta property="og:title" content="SNBT Solutions | Software Development & IT Services">
+<meta property="og:description" content="Custom software, cloud, data and managed IT services. From first sprint to 24/7 support.">
+<meta property="og:url" content="https://www.snbtsolutions.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SNBT Solutions",
+  "url": "https://www.snbtsolutions.com/",
+  "logo": "https://www.snbtsolutions.com/favicon.svg",
+  "email": "info@snbtsolutions.com",
+  "description": "Software development and IT services company.",
+  "sameAs": []
+}
+</script>
+<style>
+/* Layout: wide uppercase display bands over a quiet grid; mono labels read like a console. */
+:root {
+  --paper: #F2F3F0;
+  --surface: #FFFFFF;
+  --ink: #14171B;
+  --muted: #5B6168;
+  --line: #D6D9D4;
+  --accent: #1F4FE0;
+  --accent-ink: #FFFFFF;
+  --signal: #0E8F6E;
+  --band: #14171B;
+  --band-fg: #F2F3F0;
+  --band-muted: #9AA1A9;
+  --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --wrap: 1180px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F1215; --surface: #171B20; --ink: #EDEFEC; --muted: #9AA1A9;
+    --line: #2A3037; --accent: #6E8FFF; --accent-ink: #0B0E12; --signal: #3FD1A5;
+    --band: #1A1F25; --band-fg: #EDEFEC; --band-muted: #9AA1A9; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1215; --surface: #171B20; --ink: #EDEFEC; --muted: #9AA1A9;
+  --line: #2A3037; --accent: #6E8FFF; --accent-ink: #0B0E12; --signal: #3FD1A5;
+  --band: #1A1F25; --band-fg: #EDEFEC; --band-muted: #9AA1A9; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+a { color: inherit; }
+img { max-width: 100%; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+.label { font: 500 0.78rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+.label b { color: var(--signal); font-weight: 500; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Header */
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 14px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 800 1.15rem/1 var(--display); letter-spacing: 0.02em; }
+.logo-mark { width: 30px; height: 30px; flex: none; }
+.logo small { display: block; font: 500 0.62rem/1 var(--mono); letter-spacing: 0.22em; color: var(--muted); margin-top: 4px; }
+.menu { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.menu a { text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.menu a:hover { color: var(--accent); }
+.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font: 600 0.95rem/1 var(--body); padding: 14px 22px; border: 0; border-radius: 2px; cursor: pointer; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: inherit; box-shadow: inset 0 0 0 1.5px currentColor; }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line); color: var(--ink); padding: 8px 12px; font: 500 0.8rem/1 var(--mono); letter-spacing: 0.1em; border-radius: 2px; cursor: pointer; }
+@media (max-width: 860px) {
+  .menu-toggle { display: block; }
+  .menu { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 8px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); }
+  .menu[hidden] { display: none !important; }
+  .menu li a:not(.btn) { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .menu .btn { margin-top: 12px; justify-content: center; }
+}
+@media (min-width: 861px) { .menu[hidden] { display: flex !important; } }
+
+/* Hero */
+.hero { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 88px); }
+.hero h1 { font-size: clamp(2.3rem, 7.2vw, 5.6rem); line-height: 0.98; font-weight: 800; text-transform: uppercase; margin-top: 22px; max-width: 14ch; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: end; margin-top: 36px; }
+.hero p { margin: 0; font-size: 1.2rem; max-width: 52ch; color: var(--muted); }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.console { background: var(--band); color: var(--band-fg); font: 400 0.86rem/1.75 var(--mono); padding: 22px 24px; border-radius: 3px; min-width: 0; overflow-x: auto; }
+.console .dim { color: var(--band-muted); }
+.console .ok { color: var(--signal); }
+.cursor { display: inline-block; width: 8px; height: 1em; background: var(--band-fg); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 860px) { .hero-row { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Sections */
+section { padding-block: clamp(64px, 8vw, 104px); }
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; margin-bottom: 48px; }
+.section-head h2 { font-size: clamp(1.8rem, 4.2vw, 3rem); line-height: 1.05; text-transform: uppercase; font-weight: 700; margin-top: 14px; }
+.section-head p { margin: 0; color: var(--muted); max-width: 54ch; }
+@media (max-width: 760px) { .section-head { grid-template-columns: 1fr; } }
+
+/* Services index */
+.services { border-top: 1px solid var(--ink); }
+.svc { display: grid; grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1.2fr); gap: 24px; padding-block: 26px; border-bottom: 1px solid var(--line); align-items: baseline; transition: background .2s; }
+.svc:hover { background: var(--surface); }
+.svc .code { font: 500 0.8rem/1 var(--mono); color: var(--muted); }
+.svc h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+.svc p { margin: 0; color: var(--muted); }
+.svc .tags { display: block; margin-top: 8px; font: 400 0.8rem/1.5 var(--mono); color: var(--ink); }
+@media (max-width: 760px) { .svc { grid-template-columns: 50px minmax(0, 1fr); } .svc p { grid-column: 2; } }
+
+/* Industries */
+.industries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.ind { background: var(--paper); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+.ind h3 { font-size: 1.05rem; text-transform: uppercase; font-weight: 700; }
+.ind p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+@media (max-width: 900px) { .industries { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .industries { grid-template-columns: 1fr; } }
+
+/* Dark band: process */
+.band { background: var(--band); color: var(--band-fg); }
+.band .label { color: var(--band-muted); }
+.band .section-head p { color: var(--band-muted); }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.steps li { border-top: 2px solid var(--band-fg); padding-top: 20px; counter-increment: step; }
+.steps li::before { content: "0" counter(step); font: 500 0.8rem/1 var(--mono); color: var(--signal); letter-spacing: 0.1em; }
+.steps h3 { font-size: 1.15rem; text-transform: uppercase; margin: 14px 0 10px; }
+.steps p { margin: 0; color: var(--band-muted); font-size: 0.98rem; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* Engagement models */
+.models { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.model { background: var(--surface); border: 1px solid var(--line); padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.model h3 { font-size: 1.1rem; text-transform: uppercase; }
+.model p { margin: 0; color: var(--muted); }
+.model .fit { margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line); font: 400 0.85rem/1.5 var(--mono); }
+@media (max-width: 900px) { .models { grid-template-columns: 1fr; } }
+
+/* SLA table */
+.table-wrap { overflow-x: auto; margin-top: 56px; border: 1px solid var(--line); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 0.95rem; }
+caption { text-align: left; padding: 18px 20px 6px; }
+th, td { text-align: left; padding: 14px 20px; border-top: 1px solid var(--line); }
+th { font: 500 0.75rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+td { font-variant-numeric: tabular-nums; }
+.sev { display: inline-block; font: 500 0.75rem/1 var(--mono); padding: 5px 8px; border-radius: 2px; border: 1px solid currentColor; }
+.p1 { color: #C2362B; } .p2 { color: #B36B00; } .p3 { color: var(--accent); } .p4 { color: var(--muted); }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+.about p { margin: 0 0 18px; max-width: 60ch; }
+.values { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--ink); }
+.values li { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; }
+.values strong { font: 700 0.9rem/1.4 var(--display); text-transform: uppercase; }
+.values span { color: var(--muted); }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; } .values li { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; }
+.contact h2 { font-size: clamp(2rem, 5vw, 3.6rem); text-transform: uppercase; line-height: 1; font-weight: 800; margin-top: 14px; }
+.contact-info { margin-top: 28px; display: grid; gap: 16px; }
+.contact-info div { display: grid; gap: 4px; }
+.contact-info a { font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--accent); width: fit-content; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--line); padding: 28px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+label { font: 500 0.75rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+input, select, textarea { font: inherit; font-size: 1rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 2px; padding: 12px 14px; width: 100%; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+textarea { min-height: 130px; resize: vertical; }
+.form-note { grid-column: 1 / -1; margin: 0; font-size: 0.9rem; color: var(--signal); }
+@media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { form { grid-template-columns: 1fr; padding: 20px; } }
+
+/* Footer */
+footer { background: var(--band); color: var(--band-fg); padding-block: 56px 32px; }
+.foot { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 40px; }
+.foot ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.foot a { text-decoration: none; color: var(--band-fg); }
+.foot a:hover { color: var(--signal); }
+.foot .label { color: var(--band-muted); }
+.foot p { color: var(--band-muted); margin: 14px 0 0; max-width: 38ch; }
+.legal { margin-top: 48px; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--band-fg) 18%, transparent); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font: 400 0.8rem/1.5 var(--mono); color: var(--band-muted); }
+@media (max-width: 760px) { .foot { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="SNBT Solutions home">
+      <svg class="logo-mark" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--ink)"/><rect x="17" y="1" width="12" height="12" fill="var(--accent)"/><rect x="1" y="17" width="12" height="12" fill="var(--accent)"/><rect x="17" y="17" width="12" height="12" fill="var(--ink)"/></svg>
+      <span>SNBT<small>SOLUTIONS</small></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">MENU</button>
+    <ul class="menu" id="menu" hidden>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#how-we-work">How We Work</a></li>
+      <li><a href="#about">Who We Are</a></li>
+      <li><a class="btn" href="#contact">Let’s Get Started</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <span class="label"><b>●</b> Software &amp; IT Services</span>
+    <h1>We build software that <em>runs</em> your business.</h1>
+    <div class="hero-row">
+      <div>
+        <p>SNBT Solutions designs, builds and supports custom applications, cloud platforms and data systems for growing companies. One team from the first workshop to round-the-clock support.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Start a project →</a>
+          <a class="btn ghost" href="#services">See our services</a>
+        </div>
+      </div>
+      <div class="console" aria-label="Example release log">
+        <div class="dim">$ snbt release --env production</div>
+        <div>▸ running 1,284 tests ......... <span class="ok">passed</span></div>
+        <div>▸ security scan ............... <span class="ok">0 critical</span></div>
+        <div>▸ deploying to 3 regions ...... <span class="ok">done</span></div>
+        <div>▸ health checks ............... <span class="ok">200 OK</span></div>
+        <div class="dim">release v4.2.0 live · monitoring on</div>
+        <div>$ <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="label">Capabilities + Offerings</span><h2>What we do</h2></div>
+        <p>Pick a single service or bring us the whole problem. Every engagement comes with a named lead, weekly demos and code you own.</p>
+      </div>
+      <div class="services">
+        <div class="svc"><span class="code">SVC-01</span><h3>Custom software development</h3><p>Business applications built around how your team actually works.<span class="tags">.NET · Java · Node.js · Python</span></p></div>
+        <div class="svc"><span class="code">SVC-02</span><h3>Web &amp; mobile apps</h3><p>Fast, accessible web apps and native or cross-platform mobile apps.<span class="tags">React · Angular · Flutter · Swift · Kotlin</span></p></div>
+        <div class="svc"><span class="code">SVC-03</span><h3>Cloud &amp; DevOps</h3><p>Migrations, infrastructure as code, CI/CD pipelines and cost tuning.<span class="tags">AWS · Azure · GCP · Terraform · Kubernetes</span></p></div>
+        <div class="svc"><span class="code">SVC-04</span><h3>Data, analytics &amp; AI</h3><p>Data pipelines, warehouses, dashboards and practical AI features.<span class="tags">Snowflake · Databricks · Power BI · LLM integration</span></p></div>
+        <div class="svc"><span class="code">SVC-05</span><h3>ERP &amp; CRM integration</h3><p>Connect the systems you already pay for so data moves without re-keying.<span class="tags">Salesforce · SAP · Dynamics 365 · APIs</span></p></div>
+        <div class="svc"><span class="code">SVC-06</span><h3>Quality assurance &amp; testing</h3><p>Manual, automated and performance testing built into every sprint.<span class="tags">Selenium · Playwright · JMeter</span></p></div>
+        <div class="svc"><span class="code">SVC-07</span><h3>Cybersecurity</h3><p>Security reviews, identity and access setup, and compliance readiness.<span class="tags">IAM · SOC 2 · HIPAA readiness</span></p></div>
+        <div class="svc"><span class="code">SVC-08</span><h3>Managed IT &amp; support</h3><p>Monitoring, patching, help desk and application support with clear response times.<span class="tags">24/7 monitoring · L1–L3 support</span></p></div>
+        <div class="svc"><span class="code">SVC-09</span><h3>IT staffing &amp; augmentation</h3><p>Vetted developers, testers and architects who join your team in weeks.<span class="tags">Contract · Contract-to-hire · Direct hire</span></p></div>
+        <div class="svc"><span class="code">SVC-10</span><h3>UX / UI design</h3><p>Research, prototypes and design systems that make software easy to use.<span class="tags">Figma · Usability testing</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="label">Industries</span><h2>Where we work</h2></div>
+        <p>We learn your domain first, so the software respects your regulations, your data and your customers.</p>
+      </div>
+      <div class="industries">
+        <div class="ind"><h3>Healthcare</h3><p>Patient portals, EHR integrations and HIPAA-aware cloud setups.</p></div>
+        <div class="ind"><h3>Banking &amp; finance</h3><p>Secure transaction systems, reporting and regulatory data feeds.</p></div>
+        <div class="ind"><h3>Retail &amp; e-commerce</h3><p>Storefronts, inventory sync and customer analytics.</p></div>
+        <div class="ind"><h3>Manufacturing</h3><p>Shop-floor data, ERP integration and supply chain visibility.</p></div>
+        <div class="ind"><h3>Logistics</h3><p>Tracking, routing and warehouse management systems.</p></div>
+        <div class="ind"><h3>Public sector</h3><p>Accessible citizen services and modernized legacy systems.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-we-work" class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="label">How We Work</span><h2>From idea to production</h2></div>
+        <p>A clear path with a working demo every two weeks, so you see progress instead of status reports.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Discover</h3><p>Workshops with your team to map goals, users, systems and constraints. You get a scoped plan and estimate.</p></li>
+        <li><h3>Design</h3><p>Architecture, user flows and clickable prototypes reviewed with the people who will use them.</p></li>
+        <li><h3>Build</h3><p>Two-week sprints with automated tests, code reviews and a demo at the end of each one.</p></li>
+        <li><h3>Run</h3><p>Launch, monitoring and ongoing support so the system keeps improving after go-live.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="engagement">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="label">Engagement Models</span><h2>Ways to work with us</h2></div>
+        <p>Choose the model that matches your budget and how much control you want to keep.</p>
+      </div>
+      <div class="models">
+        <div class="model"><span class="label">Model A</span><h3>Fixed-scope project</h3><p>A defined outcome, timeline and price. Best when requirements are clear.</p><div class="fit">Good for: MVPs, migrations, integrations</div></div>
+        <div class="model"><span class="label">Model B</span><h3>Dedicated team</h3><p>A cross-functional team that works only on your product, month to month.</p><div class="fit">Good for: evolving products, long roadmaps</div></div>
+        <div class="model"><span class="label">Model C</span><h3>Staff augmentation</h3><p>Individual specialists who join your existing team and follow your process.</p><div class="fit">Good for: skill gaps, deadline crunches</div></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption><span class="label">Managed support · standard response targets</span></caption>
+          <thead><tr><th>Priority</th><th>Example</th><th>First response</th><th>Coverage</th></tr></thead>
+          <tbody>
+            <tr><td><span class="sev p1">P1</span></td><td>Production system down</td><td>30 min</td><td>24 × 7</td></tr>
+            <tr><td><span class="sev p2">P2</span></td><td>Major feature degraded</td><td>2 hours</td><td>24 × 7</td></tr>
+            <tr><td><span class="sev p3">P3</span></td><td>Minor bug, workaround exists</td><td>1 business day</td><td>Business hours</td></tr>
+            <tr><td><span class="sev p4">P4</span></td><td>Question or enhancement</td><td>2 business days</td><td>Business hours</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="label">Who We Are</span><h2>A partner, not a vendor</h2></div>
+      </div>
+      <div class="about">
+        <div>
+          <p>SNBT Solutions is a software and IT services company. We help businesses replace spreadsheets and aging systems with software that is reliable, secure and easy to change.</p>
+          <p>Our engineers, designers and support staff work as one team. You talk to the people building your product, and the same people support it after launch.</p>
+        </div>
+        <ul class="values">
+          <li><strong>Transparent</strong><span>Shared boards, weekly demos and plain-language reporting.</span></li>
+          <li><strong>Accountable</strong><span>One named lead owns delivery from kickoff to support.</span></li>
+          <li><strong>Secure</strong><span>Least-privilege access, code reviews and scanning on every release.</span></li>
+          <li><strong>Yours</strong><span>You own the code, the data and the cloud accounts.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap contact">
+      <div>
+        <span class="label">Let’s Get Started</span>
+        <h2>Tell us what you’re building.</h2>
+        <div class="contact-info">
+          <div><span class="label">Email</span><a href="mailto:info@snbtsolutions.com">info@snbtsolutions.com</a></div>
+          <div><span class="label">Phone</span><span>+1 (919) 454-7995</span></div>
+          <div><span class="label">Response time</span><span>We reply within one business day.</span></div>
+        </div>
+      </div>
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID (see DEPLOY-GUIDE.md, Step 6). -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="f-service">Service needed</label>
+          <select id="f-service" name="service">
+            <option>Custom software development</option><option>Web &amp; mobile apps</option><option>Cloud &amp; DevOps</option><option>Data, analytics &amp; AI</option><option>ERP &amp; CRM integration</option><option>QA &amp; testing</option><option>Cybersecurity</option><option>Managed IT &amp; support</option><option>IT staffing</option><option>Something else</option>
+          </select></div>
+        <div class="field full"><label for="f-msg">Project details</label><textarea id="f-msg" name="message" required placeholder="What are you trying to build or fix? Any timeline or budget in mind?"></textarea></div>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="field full"><button class="btn" type="submit">Send message →</button></div>
+        <p class="form-note" id="form-note" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" style="color:var(--band-fg)">SNBT<small style="color:var(--band-muted)">SOLUTIONS</small></a>
+        <p>Software development, cloud, data and managed IT services for growing businesses.</p>
+      </div>
+      <div><span class="label">Company</span><ul><li><a href="#services">Services</a></li><li><a href="#industries">Industries</a></li><li><a href="#how-we-work">How We Work</a></li><li><a href="#about">Who We Are</a></li></ul></div>
+      <div><span class="label">Contact</span><ul><li><a href="mailto:info@snbtsolutions.com">info@snbtsolutions.com</a></li><li><a href="#contact">Start a project</a></li><li><a href="" rel="noopener" target="_blank"></a></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="year">2026</span> SNBT Solutions. All rights reserved.</span><span>Built for speed · No tracking cookies</span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var t = document.getElementById('menu-toggle'), m = document.getElementById('menu');
+  t.addEventListener('click', function () { var open = m.hidden; m.hidden = !open; t.setAttribute('aria-expanded', String(open)); t.textContent = open ? 'CLOSE' : 'MENU'; });
+  m.addEventListener('click', function (e) { if (e.target.tagName === 'A' && window.innerWidth <= 860) { m.hidden = true; t.setAttribute('aria-expanded', 'false'); t.textContent = 'MENU'; } });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('contact-form'), note = document.getElementById('form-note');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var action = form.getAttribute('action') || '';
+    if (!action || action.indexOf('YOUR_FORM_ID') !== -1) {
+      note.hidden = false; note.textContent = 'Form preview: connect Formspree to start receiving messages.'; return;
+    }
+    note.hidden = false; note.textContent = 'Sending…';
+    fetch(action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error(); form.reset(); note.textContent = 'Thanks. We received your message and will reply within one business day.'; })
+      .catch(function () { note.textContent = 'The message did not send. Please email info@snbtsolutions.com instead.'; });
+  });
+})();
+</script>
+</body>
+</html>
